@@ -1,8 +1,60 @@
 {% extends 'base.html' %}
 {% block contents %}
 
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/book/new.css' %}">
+
 <div>
     <h1>/book/new</h1>
 </div>
+
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1 class="logo">技術書を登録しよう！</h1>
+        </header>
+        <form action="cgi-bin/aaa.cgi" method="post">
+            <table border="0">
+                <tr>
+                    <td align="right"><b> 書籍名：</b></td>
+                    <td><input type="text" name="name" size="30" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td align="right"><b> 分野または言語名：</b></td>
+                    <td><input type="text" name="name" size="30" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td align="right"><b> 購入日：</b></td>
+                    <td><input type="data" name="name" ></td>
+                </tr>
+                <tr>
+                    <td align="right"><b> 読了日：</b></td>
+                    <td><input type="data" name="name" ></td>
+                </tr>
+                <tr>
+                    <td align="right"><b> メモ：</b></td>
+                    <td><input type="text" name="memo" size="50" maxlength="50"></td>
+                </tr>
+                <tr>
+                    <td align="right"><b> 画像をアップロード：</b></td>
+                    <td><input type="file" name="photo" ></td><br>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                      <input type="reset" value="リセット">
+                      <input type="submit" value="送信">
+                    </td>
+                </tr>
+        </form>
+
+    
+        <footer class="footer">
+            <P></P>
+        </footer>
+        
+    </div>
+</body>
 
 {% endblock %}
