@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechMarathon</title>
 </head>
+
 <body>
   <header>
     {% block header %}
@@ -23,6 +25,13 @@
     <a href="{% url 'tech_marathon:book_new' %}">本の登録ページへ</a>
     <a href="{% url 'tech_marathon:book_edit' 1 %}">本の編集ページへ</a>
     <a href="{% url 'tech_marathon:unread_books' %}">未読本一覧ページへ</a>
+    <ul class="nabra-nav mr-md2">
+      {% if user.is_authenticated %}
+      <li class="nav-item"><a class="navlink" href="{% url 'account:logout' %}">ログアウト</a></li>
+      {% else %}
+      <li class="nav-item"><a class="nav-link" href="{% url 'account:login' %}">ログイン</a></li>
+      {% endif %}
+    </ul>
   </div>
 
   <p>----base---</p>
@@ -32,4 +41,5 @@
     {% endblock %}
   </div>
 </body>
+
 </html>
