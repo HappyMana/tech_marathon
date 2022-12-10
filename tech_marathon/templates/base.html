@@ -11,8 +11,21 @@
     {% block header %}
     {% endblock %}
   </header>
-  <p>ここはbaseです</p>
 
+  <div>
+    <button href="{% url 'tech_marathon:sign_in' %}">ログインへ</button>
+    <button href="{% url 'tech_marathon:sign_up' %}">サインアップへ</button>
+    <button href="{% url 'tech_marathon:my_page' %}">マイページへ</button>
+    <button href="{% url 'tech_marathon:my_page_edit' %}">マイページ編集ページへ</button>
+    <button href="{% url 'tech_marathon:other_users' %}">他のユーザの一覧ページへ</button>
+    <button href="{% url 'tech_marathon:other_user' 1 %}">他のユーザの詳細ページへ</button>
+    <button href="{% url 'tech_marathon:book_show' 1 %}">本の詳細ページへ</button>
+    <button href="{% url 'tech_marathon:book_new' %}">本の登録ページへ</button>
+    <button href="{% url 'tech_marathon:book_edit' 1 %}">本の編集ページへ</button>
+    <button href="{% url 'tech_marathon:unread_books' %}">未読本一覧ページへ</button>
+  </div>
+
+  <p>----base---</p>
 
   <div>
     {% block contents %}
