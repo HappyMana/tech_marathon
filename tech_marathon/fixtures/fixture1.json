@@ -1,0 +1,58 @@
+[
+  {
+    "model": "tech_marathon.user",
+    "pk": 1,
+    "fields": {
+      "name": "user1",
+      "goal": "ゴール1"
+    }
+  },
+  {
+    "model": "tech_marathon.user",
+    "pk": 2,
+    "fields": {
+      "name": "user2",
+      "goal": "ゴール2"
+    }
+  },
+  {
+    "model": "tech_marathon.category",
+    "pk": 1,
+    "fields": {
+      "name": "カテゴリー1"
+    }
+  },
+  {
+    "model": "tech_marathon.category",
+    "pk": 2,
+    "fields": {
+      "name": "カテゴリー2"
+    }
+  },
+  {
+    "model": "tech_marathon.book",
+    "pk": 1,
+    "fields": {
+      "title": "book1",
+      "memo": "メモ1",
+      "read_status": true,
+      "begin_date": "2022-12-09T13:19:37+09:00",
+      "end_date": "2022-12-10T13:19:37+09:00",
+      "user": 1,
+      "category": [1,2]
+    }
+  },
+  {
+    "model": "tech_marathon.book",
+    "pk": 2,
+    "fields": {
+      "title": "book2",
+      "memo": "メモ2",
+      "read_status": true,
+      "begin_date": "2022-12-08T13:19:37+09:00",
+      "end_date": "2022-12-09T13:19:37+09:00",
+      "user": 1,
+      "category": [1,2]
+    }
+  }
+]
