@@ -8,7 +8,7 @@ class BookTemplateView(TemplateView):
   # 　詳細ページ
   def show(request, book_id):
     ctx = {
-      "book": Book.object.filter(id=book_id)
+      "book": Book.objects.get(id=book_id)
     }
     return render(request, 'tech_marathon/book/show.html', ctx)
 
@@ -32,7 +32,7 @@ class BookTemplateView(TemplateView):
   def edit(request, book_id):
     ctx = {
       "form": BookForm(),
-      "book": Book.object.filter(id=book_id)
+      "book": Book.objects.filter(id=book_id)
     }
     return render(request, 'tech_marathon/book/edit.html', ctx)
 
@@ -46,7 +46,7 @@ class BookTemplateView(TemplateView):
     ctx = {
       # TODO
       # 認証ができたらコメントをはずす
-      # "book": Book.objects.filter(user_id=request.user.id, read_status=False)
-      "book": Book.objects.filter(user_id=1, read_status=False)
+      # "books": Book.objects.filter(user_id=request.user.id, read_status=False)
+      "books": Book.objects.filter(user_id=1, read_status=False)
     }
     return render(request, 'tech_marathon/book/unread_books.html', ctx)
