@@ -13,5 +13,5 @@ class SignInForm(forms.Form):
 
 class SignUpForm(forms.Form):
   name = forms.CharField(label="名前")
-  email = forms.ChoiceField(label="メールアドレス")
+  email = forms.CharField(label="メールアドレス")
   password = forms.CharField(label="パスワード", widget=forms.PasswordInput(), min_length=8)
