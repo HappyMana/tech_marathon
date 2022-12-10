@@ -1,0 +1,14 @@
+[
+  {
+    "model": "tech_marathon.book",
+    "pk": 3,
+    "fields": {
+      "title": "book3",
+      "memo": "メモ3",
+      "read_status": true,
+      "begin_date": "2022-12-09T13:19:37+09:00",
+      "end_date": "2022-12-10T13:19:37+09:00",
+      "user_id": 2
+    }
+  }
+]

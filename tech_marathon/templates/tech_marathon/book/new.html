@@ -56,5 +56,9 @@
         
     </div>
 </body>
+<form method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">送信</button>
+</form>
 
 {% endblock %}
