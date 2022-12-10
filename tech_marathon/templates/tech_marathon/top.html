@@ -4,6 +4,13 @@
 <div>
     <h1>/   top</h1>
 </div>
+<p>{{ user.name }}</p>
 
-<p>{{ books }}</p>
+{% for book in books %}
+    <p>{{ book.title }}</p>
+    {% for category in book.category.all %}
+        <p>{{ category.name }}</p>
+    {% endfor %}
+{% endfor %}
+
 {% endblock %}
