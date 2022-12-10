@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+
+{% block contents %}
+
+<h2>ログイン</h2>
+<form method="post">
+
+  <input type="hidden" name="next" value="{{next}}" />
+  {%
+
+
+  <button type="submit" class="btn btn-primary">ログイン</button>
+
+</form>
+
+
+{% endblock%}

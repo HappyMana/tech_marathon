@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tech_marathon',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tech_marathon',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': 'root',
     }
 }
 
@@ -128,3 +129,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_NAME = os.path.basename(BASE_DIR)
 STATIC_ROOT = '/var/www/{}/static'.format(PROJECT_NAME)
+
+LOGIN_URL = '/account/login'
+# LOGIN_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT = '/'
