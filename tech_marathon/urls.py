@@ -1,7 +1,7 @@
 from django.urls import path
+from .views import top
 
-from . import views
-
+app_name = 'tech_marathon'
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('top_page/', top.TopTemplateView.index, name='top_page'),
 ]
