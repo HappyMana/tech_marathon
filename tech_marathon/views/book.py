@@ -8,7 +8,7 @@ class BookTemplateView(TemplateView):
   # 　詳細ページ
   def show(request, book_id):
     ctx = {
-      "book": Book.objects.get(id=book_id)
+      "book": Book.objects.prefetch_related('category').get(id=book_id)
     }
     return render(request, 'tech_marathon/book/show.html', ctx)
 
