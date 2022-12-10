@@ -1,18 +1,25 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect, reverse
 from tech_marathon.models import Book, User
+from tech_marathon.forms import SignInForm, SignUpForm
 
 class UserTemplateView(TemplateView):
 
   # サインアップ
   # TODO
   def sign_up(request):
-    return render(request, 'tech_marathon/user/sign_up.html')
+    ctx = {
+      "form": SignUpForm()
+    }
+    return render(request, 'tech_marathon/user/sign_up.html', ctx)
 
   # サインイン
   # TODO
   def sign_in(request):
-    return render(request, 'tech_marathon/user/sign_in.html')
+    ctx = {
+      "form": SignInForm()
+    }
+    return render(request, 'tech_marathon/user/sign_in.html', ctx)
 
   # ログインしているユーザのマイページ
   def my_page(request):
