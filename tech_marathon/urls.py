@@ -5,8 +5,6 @@ app_name = 'tech_marathon'
 urlpatterns = [
     path('', top.TopTemplateView.index, name='top'),
 
-    path('sign_in/', user.UserTemplateView.sign_in, name='sign_in'),
-    path('sign_up/', user.UserTemplateView.sign_up, name='sign_up'),
     path('my_page/', user.UserTemplateView.my_page, name='my_page'),
     path('my_page/edit/', user.UserTemplateView.edit, name='my_page_edit'),
     path('other_users/', user.UserTemplateView.other_users, name='other_users'),

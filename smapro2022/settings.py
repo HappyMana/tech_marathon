@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
     'tech_marathon',
+    'account.apps.AccountConfig',
+    'django_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -81,6 +84,8 @@ DATABASES = {
         'NAME': 'tech_marathon',
         'USER': 'root',
         'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
+        'PORT': 3306,
     }
 }
 
@@ -107,9 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 
@@ -128,3 +133,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_NAME = os.path.basename(BASE_DIR)
 STATIC_ROOT = '/var/www/{}/static'.format(PROJECT_NAME)
+
+LOGIN_URL = '/account/login'
+LOGIN_REDIRECT_URL = '/tech_marathon/my_page'
+LOGOUT_REDIRECT = '/'
