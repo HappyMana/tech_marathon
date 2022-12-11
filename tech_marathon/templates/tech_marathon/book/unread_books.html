@@ -1,18 +1,42 @@
 {% extends 'base.html' %}
 {% block contents %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/unread_books.css' %}">
 
-<!-- <div>
-    <h1>/book/unread_books</h1>
-</div> -->
+<div>
+    <h1>未読本一覧</h1>
+</div>
 
 <div class="container">
     <div class="row">
       <div class="col">
-        <img class="my-5 w-100" src="img/">
-        </div>
+        <img class="my-5 w-100" src="/static/images/n.jpg">
+      </div>
       <div class="col d-flex align-items-center">
-        <p class="mb-0">画像の中央あたりに横に並べたいです</p>
-    　 </div>
-  　 </div>
-  </div>
+        <p class="mb-0">ブロックチェーン・プログラミング</p>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <img class="my-5 w-100" src="/static/images/o.jpg">
+      </div>
+      <div class="col d-flex align-items-center">
+        <p class="mb-0">ゼロから始まるPython機械学習</p>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <img class="my-5 w-100" src="/static/images/p.jpg">
+      </div>
+      <div class="col d-flex align-items-center">
+        <p class="mb-0">Rustプログラミング入門</p>
+      </div>
+    </div>
+</div>
 {% endblock %}

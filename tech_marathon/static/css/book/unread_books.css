@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* 横並び */
+
+.flex {
+    display: flex; /*横並び*/
+}
+.flex .image {
+    width: 100px; /*画像サイズ指定*/
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+.flex .text {
+    margin: 0 0 0 20px;
+    padding: 0;
+}
+  
