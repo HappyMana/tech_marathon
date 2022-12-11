@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block contents %}
 
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/user/my_page.css' %}">
+
 <div>
     <h1>/my_page   my_page</h1>
 </div>
@@ -9,4 +12,15 @@
 <p>{{ user.goal }}</p>
 
 
+
+    <body>
+        <h1>マイページ</h1>
+        <p>ユーザー名</p>
+        <p>user.name</p>
+        <p>目標</p>
+        <p>user.goal</p>
+    </body>
+
+
+    
 {% endblock %}

@@ -7,4 +7,48 @@
 
 <p>{{ form.as_p }}</p>
 
+<link rel="stylesheet" href="{% static 'css/user/sign_in.css' %}">
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>tech_marathon</title>
+    <link rel="stylesheet" href="css/sign_in.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!--ヘッダー-->
+        <header class="header">
+            <h1 class="logo"  style="text-align:center" >ログイン</h1>
+        </header>
+        <!--ヘッダー　ここまで-->
+        <!--メインここから-->
+        <form action="cgi-bin/aaa.cgi" method="post">
+            <table border="0">
+                <tr>
+                    <td align="right"><b> ユーザー名：</b></td>
+                    <td><input type="text" name="name" size="30" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td align="right"><b> パスワード：</b></td>
+                    <td><input type="password" name="pass" size="6" maxlength="4"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                      <input type="reset" value="リセット">
+                      <input type="submit" value="送信">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <!--メインここまで-->
+        <!--フッター-->
+        <footer class="footer">
+            <li style="text-align:center"><a href="http://127.0.0.1:8000/tech_marathon/sign_up/">＊ユーザー登録はこちら</a></li>
+        </footer>
+        <!--フッター　ここまで-->
+    </div>
+</body>
+
 {% endblock %}
