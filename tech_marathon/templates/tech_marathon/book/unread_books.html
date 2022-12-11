@@ -9,6 +9,11 @@
 
 <h1>未読本一覧</h1><br>
 <p>{{ books }}</p>
+{% for book in books %}
+    <p>{{ book.title }}</p>
+    <p>{{ book.memo }}</p>
+    <p>{{ book.begin_date }}</p>
+{% endfor %}
 
 
 {% endblock %}

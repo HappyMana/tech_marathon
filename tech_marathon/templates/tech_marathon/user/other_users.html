@@ -5,9 +5,9 @@
     <h1>/other_users   other_users</h1>
 </div> -->
 
-<!-- <p>{{ other_users }}</p> -->
-
-<h1>他のユーザー</h1>
-<p>{{ other_users }}</p>
-
+{% for user in other_users %}
+    <p>{{ user.username }}</p>
+    <p>{{ user.goal }}</p>
+    <p>{{ user.books.count }}</p>
+{% endfor %}
 {% endblock %}

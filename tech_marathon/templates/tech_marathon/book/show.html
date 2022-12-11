@@ -2,7 +2,14 @@
 {% block contents %}
 
 <div>
-    <h1>/book/{{ book_id }}</h1>
+    <h1>/book/{{ book.id }}</h1>
 </div>
 
+<p>{{ book.title }}</p>
+<p>{{ book.memo }}</p>
+<p>{{ book.begin_date }}</p>
+<p>{{ book.end_date }}</p>
+
+<a href="{% url 'tech_marathon:book_edit' book.id " class="btn">編集する</a>
+<a href="{% url 'tech_marathon:book_delete'" action="delete" class="btn">削除する</a>
 {% endblock %}
