@@ -1,8 +1,9 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect, reverse
-from tech_marathon.models import Book, User
+from tech_marathon.models import Book
 from tech_marathon.forms import SignInForm, SignUpForm
-
+from django.db import models
+from django.contrib.auth.models import User
 class UserTemplateView(TemplateView):
 
   # サインアップ
@@ -26,8 +27,8 @@ class UserTemplateView(TemplateView):
     ctx = {
       # TODO
       # 認証ができたらコメントアウトをはずす
-      # "user": User.object.filter(id=request.user.id)
-      "user": User.objects.get(id=1)
+      "user": User.objects.get(id=request.user.id)
+      #"user": User.objects.get(id=1)
     }
     return render(request, 'tech_marathon/user/my_page.html', ctx)
 
