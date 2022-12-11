@@ -1,14 +1,69 @@
 {% extends 'base.html' %}
 {% block contents %}
+{% load static %}
 {% load widget_tweaks %}
 
-<div>
-    <h1>/book/new</h1>
-</div>
+<link rel="stylesheet" href="{% static 'css/book/new.css' %}">
 
-<form method="POST">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">送信</button>
-</form>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1 class="logo">技術書を登録しよう！</h1>
+        </header>
+        <form method="POST" action="{% url 'tech_marathon:book_create' %}">
+            {% csrf_token %}
+
+            <span class="">書籍名：</span>
+            {{ form.title | add_class:""}}
+            <span class="">分野または言語名：</span>
+            {{ form.category | add_class:""}}
+            <span class="">購入日：</span>
+            {{ form.begin_date | add_class:""}}
+            <span class="">読了日：</span>
+            {{ form.end_date | add_class:""}}
+            <span class="">メモ：</span>
+            {{ form.memo | add_class:""}}
+            <!-- <span class="">画像をアップロード：</span> -->
+            <!-- {{ form.memo | add_class:""}} -->
+
+            <button type="submit" class="btn btn-ptrimary">登録</button>
+        </form>
+
+            <!-- <table border="0">
+                <tr>
+                    <td align="right"><b> 書籍名：</b></td>
+                    <td><input type="text" name="name" size="30" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td align="right"><b> 分野または言語名：</b></td>
+                    <td><input type="text" name="name" size="30" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td align="right"><b> 購入日：</b></td>
+                    <td><input type="data" name="name" ></td>
+                </tr>
+                <tr>
+                    <td align="right"><b> 読了日：</b></td>
+                    <td><input type="data" name="name" ></td>
+                </tr>
+                <tr>
+                    <td align="right"><b> メモ：</b></td>
+                    <td><input type="text" name="memo" size="50" maxlength="50"></td>
+                </tr>
+                <tr>
+                    <td align="right"><b> 画像をアップロード：</b></td>
+                    <td><input type="file" name="photo" ></td><br>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                      <input type="reset" value="リセット">
+                      <input type="submit" value="送信">
+                    </td>
+                </tr>
+
+
+    </div>
+</body>
 
 {% endblock %}

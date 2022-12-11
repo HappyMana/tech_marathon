@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.number {
+    position: absolute;
+    top: 49px;
+    right: 30px;
+    text-align: right;
+}
+li {
+    display: block;
+    width: 200px;
+    height: 100px;
+    float: left;
+    line-height: 100px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+.bg_test{
+    background-image: url("/static/images/無題72_20221210233758.png");
+    background-size: cover;
+}
+
+ul {
+    margin-top: 20px;
+}
