@@ -25,9 +25,7 @@ class UserTemplateView(TemplateView):
   def my_page(request):
     ctx = {
       # TODO
-      # 認証ができたらコメントアウトをはずす
-      # "user": User.object.filter(id=request.user.id)
-      "user": User.objects.get(id=1)
+      "user": User.objects.get(id=request.user.id)
     }
     return render(request, 'tech_marathon/user/my_page.html', ctx)
 
@@ -40,9 +38,7 @@ class UserTemplateView(TemplateView):
   def other_users(request):
     ctx = {
       # TODO
-      # 認証ができたらコメントアウトをはずす
-      # "other_users": User.object.exclude(id=request.user.id, read_status=True)
-      "other_users": User.objects.exclude(id=1)
+      "other_users": User.object.exclude(id=request.user.id, read_status=True)
     }
     return render(request,'tech_marathon/user/other_users.html', ctx)
 
@@ -50,9 +46,7 @@ class UserTemplateView(TemplateView):
   def other_user(request, user_id):
     ctx = {
       # TODO
-      # 認証ができたらコメントアウトをはずす
-      # "books": Book.object.filter(user_id=user_id, read_status=True)
-      "books": Book.objects.filter(user_id=2)
+      "books": Book.object.filter(user_id=user_id, read_status=True)
     }
     return render(request,'tech_marathon/user/other_user.html', ctx)
 

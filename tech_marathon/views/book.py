@@ -45,8 +45,6 @@ class BookTemplateView(TemplateView):
   def unread_books(request):
     ctx = {
       # TODO
-      # 認証ができたらコメントをはずす
-      # "books": Book.objects.filter(user_id=request.user.id, read_status=False)
-      "books": Book.objects.filter(user_id=1, read_status=False)
+      "books": Book.objects.filter(user_id=request.user.id, read_status=False)
     }
     return render(request, 'tech_marathon/book/unread_books.html', ctx)
