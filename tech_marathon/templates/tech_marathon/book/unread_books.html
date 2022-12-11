@@ -5,6 +5,10 @@
     <h1>/book/unread_books</h1>
 </div>
 
-<p>{{ books }}</p>
+{% for book in books %}
+    <p>{{ book.title }}</p>
+    <p>{{ book.memo }}</p>
+    <p>{{ book.begin_date }}</p>
+{% endfor %}
 
 {% endblock %}
