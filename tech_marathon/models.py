@@ -1,10 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
-class User(models.Model):
-  name = models.CharField(max_length=20)
-  email = models.CharField(max_length=30)
-  goal = models.CharField(max_length=200, null=True)
+from django.contrib.auth.models import User
 
 class Category(models.Model):
   name = models.CharField(max_length=20)
