@@ -24,7 +24,7 @@ class BookTemplateView(TemplateView):
   # TODO
   def create(request):
     form = BookForm(request.POST)
-    form.save()
+    form.save(user_id=1)
     return redirect(request, 'tech_marathon/user/top.html')
 
   # 編集
