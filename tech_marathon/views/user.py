@@ -1,7 +1,6 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect, reverse
 from tech_marathon.models import Book
-from tech_marathon.forms import SignInForm, SignUpForm
 from django.db import models
 from django.contrib.auth.models import User
 class UserTemplateView(TemplateView):

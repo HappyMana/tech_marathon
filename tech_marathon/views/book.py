@@ -25,8 +25,17 @@ class BookTemplateView(TemplateView):
   # TODO
   def create(request):
     form = BookForm(request.POST)
-    form.save(user_id=1)
-    return redirect(request, 'tech_marathon/user/top.html')
+    if form.is_valid():
+      title = form.cleaned_data["title"]
+      memo = form.cleaned_data["memo"]
+      begin_date = form.cleaned_data["begin_date"]
+      obj = Book(title=title, memo=memo, begin_date=begin_date, read_status=True, user_id=request.user.id)
+      obj.save()
+    ctx = {
+      'user': User.objects.get(id=request.user.id),
+      'books': Book.objects.prefetch_related('category').filter(user_id=request.user.id, read_status=True)
+    }
+    return render(request, 'tech_marathon/top.html', ctx)
 
   # 編集
   # TODO

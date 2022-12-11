@@ -136,4 +136,4 @@ STATIC_ROOT = '/var/www/{}/static'.format(PROJECT_NAME)
 
 LOGIN_URL = '/account/login'
 LOGIN_REDIRECT_URL = '/tech_marathon/my_page'
-LOGOUT_REDIRECT = '/'
+LOGOUT_REDIRECT = '/account/login'
