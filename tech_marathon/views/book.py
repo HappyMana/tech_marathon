@@ -2,6 +2,7 @@ from django.views.generic import TemplateView
 from django.shortcuts import render, redirect, reverse
 from tech_marathon.models import Book
 from tech_marathon.forms import BookForm
+from django.contrib.auth.models import User
 
 class BookTemplateView(TemplateView):
 
@@ -24,7 +25,7 @@ class BookTemplateView(TemplateView):
   # TODO
   def create(request):
     form = BookForm(request.POST)
-    form.save()
+    form.save(user_id=1)
     return redirect(request, 'tech_marathon/user/top.html')
 
   # 編集
@@ -44,9 +45,7 @@ class BookTemplateView(TemplateView):
   # 未読本を一覧表示
   def unread_books(request):
     ctx = {
-      # TODO
-      # 認証ができたらコメントをはずす
-      # "books": Book.objects.filter(user_id=request.user.id, read_status=False)
-      "books": Book.objects.filter(user_id=1, read_status=False)
+      "user": User.objects.get(id=request.user.id),
+      "books": Book.objects.filter(user_id=request.user.id, read_status=False)
     }
     return render(request, 'tech_marathon/book/unread_books.html', ctx)
