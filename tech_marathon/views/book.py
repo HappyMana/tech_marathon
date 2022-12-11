@@ -45,7 +45,7 @@ class BookTemplateView(TemplateView):
   # 未読本を一覧表示
   def unread_books(request):
     ctx = {
-      "user": User.objects.get(id=request.user.id),
+      # TODO
       "books": Book.objects.filter(user_id=request.user.id, read_status=False)
     }
     return render(request, 'tech_marathon/book/unread_books.html', ctx)

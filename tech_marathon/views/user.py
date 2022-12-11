@@ -21,7 +21,8 @@ class UserTemplateView(TemplateView):
   # 他のユーザーたち
   def other_users(request):
     ctx = {
-      "other_users": User.objects.exclude(id=request.user.id)
+      # TODO
+      "other_users": User.object.exclude(id=request.user.id, read_status=True)
     }
     return render(request,'tech_marathon/user/other_users.html', ctx)
 

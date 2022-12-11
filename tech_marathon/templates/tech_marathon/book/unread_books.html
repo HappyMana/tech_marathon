@@ -5,15 +5,14 @@
     <h1>/book/unread_books</h1>
 </div> -->
 
-<!-- <p>{{ books }}</p> -->
-
-<h1>未読本一覧</h1><br>
-<p>{{ books }}</p>
-{% for book in books %}
-    <p>{{ book.title }}</p>
-    <p>{{ book.memo }}</p>
-    <p>{{ book.begin_date }}</p>
-{% endfor %}
-
-
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <img class="my-5 w-100" src="img/">
+        </div>
+      <div class="col d-flex align-items-center">
+        <p class="mb-0">画像の中央あたりに横に並べたいです</p>
+    　 </div>
+  　 </div>
+  </div>
 {% endblock %}
